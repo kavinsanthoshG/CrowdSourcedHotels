@@ -1,0 +1,80 @@
+
+
+<%- layout('layout/boilerPlate') -%>
+
+
+
+
+
+<form method="POST" action="/hotels/<%=hotEjs._id%>/edit?_method=PATCH" enctype="multipart/form-data">
+  <div class="row">
+  
+  
+    <div class="col-md-6 offset-md-3" >
+      <h1 class="text-center mt-3">Edit Hotel</h1>
+    <div class="mb-3">
+  
+  <label for="title"  class="form-label">Name</label>
+  <input type="text" id="title"  name="title" class="form-control" value=<%=hotEjs.title%>> 
+  </div>
+  
+  <div class="mb-3">
+  <label for="location" class="form-label">Enter a City Name</label>
+  <input type="text" id="location"  name="location" class="form-control"  value=<%=hotEjs.location%>> 
+  </div>
+   
+  <!-- <div class="mb-3">
+    <label for="images" class="form-label">Add Images</label>
+    <input type="file" id="images"  class="form-control" multiple required>
+    </div> -->
+
+    <div class="input-group mb-3">
+     
+      <div class="custom-file">
+        <input type="file" class="custom-file-input" name="images" id="images" multiple >
+        <label class="custom-file-label" for="images">Choose an Image</label>
+      </div>
+    </div>
+  
+    <div class="mb-3">
+      <label for="price" class="form-label">Price per day</label>
+      <div class="input-group">
+        <span class="input-group-text" id="price-label">₹</span>
+        <input type="text" id="price"  name="price" placeholder="0.00" class="form-control" aria-describedby="price-label" value="<%=hotEjs.price%>">
+      </div>
+       
+      </div>
+  
+      <div class="mb-3">
+        <label for="description" class="form-label">Description</label>
+        <textarea id="description"  name="description" type="text"class="form-control"><%=hotEjs.description%> </textarea>
+        </div>
+
+        <div class="mb-3">
+          <% hotEjs.image.forEach(function(img, i) { %>
+            
+            
+            <img src="<%= img.thumbnail %>" class="img-thumbnail">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="<%= img.filename %>" id="image-<%= i %>" name="deleteImages[]">
+              <label class="form-check-label" for="image-<%= i %>">
+                Delete
+              </label>
+            </div>
+          <% }) %>
+        </div>
+        
+        
+  
+  <div class="mb-3">
+    <button class="btn btn-primary">Update</button>
+    
+     <a class="btn btn-secondary" href="/hotels/<%=hotEjs._id%>">Back</a>
+  </div>
+  
+  
+  
+  
+  </form>
+
+

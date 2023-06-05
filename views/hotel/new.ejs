@@ -1,0 +1,85 @@
+<%- layout('layout/boilerPlate') -%>
+
+  
+
+
+<form class="needs-validation" enctype="multipart/form-data" method="POST" action="/hotels/new" novalidate> 
+<div class="row">
+
+
+  <div class="col-md-6 offset-md-3" >
+    <h1 class="text-center mt-3">
+      Register a Hotel
+    </h1>
+  <div class="mb-3">
+
+<label for="title"  class="form-label">Hotel Name</label>
+<input type="text" id="title"  name="title" class="form-control" required> 
+<div class="valid-feedback">
+  Looks good!
+</div>
+</div>
+
+<div class="mb-3">
+<label for="location" class="form-label">Enter a City Name</label>
+<input type="text" id="location"  name="location" class="form-control" required> 
+<div class="valid-feedback">
+  Looks good!
+</div>
+</div>
+
+<div class="input-group mb-3">
+     
+  <div class="custom-file">
+    <input type="file" class="custom-file-input" name="images" id="images" multiple required >
+    <label class="custom-file-label" for="images">Choose an Image</label>
+  </div>
+</div>
+
+<!-- <div class="mb-3">
+  <label for="image" class="form-label">Image URL</label>
+  <input type="text" id="image"  name="image" class="form-control" required> 
+  <div class="valid-feedback">
+    Looks good!
+  </div>
+  </div> -->
+
+  <div class="mb-3">
+    <label for="price" class="form-label">Price per day</label>
+    <div class="input-group">
+      <span class="input-group-text" id="price-label">₹</span>
+      <input type="number" id="price"  name="price" placeholder="0.00" class="form-control" aria-describedby="price-label" required>
+  
+      <div class="valid-feedback">
+        Looks good!
+      </div>
+    </div>
+     
+    </div>
+
+    <!-- <div class="mb-3">
+      <label for="description" class="form-label">Description</label>
+      <textarea id="description"  name="description" class="form-control" required> </textarea>
+      <div class="valid-feedback">
+        Looks good!
+      </div>  
+    </div> -->
+
+     <div class="mb-3">
+      <label for="description" class="form-label">Description</label>
+      <input type="text" id="description"  name="description" type="text" class="form-control" required> 
+      <div class="valid-feedback">
+        Looks good!
+      </div>  
+    </div>
+
+<div class="mb-3">
+  <button class="btn btn-success">Create</button>
+  <a href="/hotels" class="btn btn-info text-muted card-link">Back</a>
+</div>
+
+
+
+
+</form>
+

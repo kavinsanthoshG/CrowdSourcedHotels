@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSHotels</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+        integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+    <link rel="stylesheet" href="/stylesheet/home.css">
+</head>
+
+<body class="d-flex text-center text-white bg-dark">
+    <div class="container d-flex w-100 h-100 p-3 mx-auto flex-column">
+        <header class="mb-auto">
+            <div>
+                <!-- <h3 class="float-md-left  mb-0">CrowdSourcedHotels</h3> -->
+                <nav class="nav nav-masthead justify-content-center float-md-right ml-auto">
+                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    <a class="nav-link" href="/hotels">Hotels</a>
+                    <%if(!user){%>
+                    <a class="nav-link" href="/login">Login</a>
+                    <a class="nav-link" href="/register">Register</a>
+                     <%}else{%> 
+                    <a class="nav-link" href="/logout">Logout</a>
+                     <%}%>
+                </nav>
+            </div>
+        </header>
+        <main class="px-3 mt-2   mb-4">
+            <a href="/"  style="text-decoration: none;"><h1 style="color:white;">CrowdSourcedHotels</h1></a>
+            <p class="lead">  <br>  A platform where hotel owners can showcase their properties to travelers from around the world. This unique system allows travelers to rate and review their experiences, providing valuable insights for fellow adventurers. With this user-friendly interface, finding the perfect accommodation has never been easier. Register today and be part of a vibrant community that shares honest opinions and helps shape unforgettable travel experiences.  Discover the best accommodations through authentic experiences, all in one place.</p>
+            <a href="/hotels" class="btn btn-lg btn-secondary font-weight-bold border-white bg-white">View
+                Hotels</a>
+
+        </main>
+
+
+<P ><strong>What is a Crowed Sourced Hotel?</strong> <br>
+    Crowdsourced hotels, also known as collaborative accommodations or community-based lodging, are a type of lodging where individuals or small businesses offer their properties or spare rooms for short-term rentals. These properties are typically listed on online platforms or websites that connect hosts with travelers.<br><br>
+    
+    Crowdsourced hotels gained popularity with the rise of sharing economy platforms such as Airbnb, where individuals can rent out their homes, apartments, or rooms to travelers on a temporary basis. These platforms provide a way for hosts to monetize their unused or underutilized spaces, while travelers can find unique and often more affordable accommodations compared to traditional hotels.</P>
+       
+    <footer class="mt-auto text-white-50">
+            <p>&copy; 2023 CrowdSourcedHotels 2023 </p>
+        </footer>
+
+
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
+        integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

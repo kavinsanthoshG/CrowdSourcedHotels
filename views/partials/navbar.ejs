@@ -1,0 +1,40 @@
+<nav  class="navbar navbar-expand-lg  navbar-fixed-top sticky-top navbar-dark bg-dark bg-black">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/">CrowdSourcedHotels</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+   
+    
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <div class="navbar-nav  ml-auto">
+        
+        <li class="nav-item mr-2 ">
+          <a class="nav-link" href="/hotels">Hotels</a>
+        </li>
+        <li class="nav-item mr-2">
+          <a class="nav-link" href="/hotels/new">Register Hotel</a>
+        </li>
+        <%if(!user){%> 
+         
+          <a class="nav-link mr-2" href="/register">Sign up</a>
+        
+       
+       
+          <a class="nav-link mr-2" href="/login">Login</a>
+        
+     
+    
+         <%}else{%>
+        
+          <a class="nav-link mr-2" href="/logout">Logout</a> 
+        
+    <%}%>
+      </div>
+   
+
+
+    </div>
+
+  </div>
+</nav>
