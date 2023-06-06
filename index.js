@@ -1,9 +1,7 @@
-// if (process.env.NODE_ENV !== "production") {
-//   console.log("in development");
-// }
-
-// require("dotenv").config();
-// console.log(process.env.CLOUDINARY_KEY);
+if (process.env.NODE_ENV !== "production") {
+  console.log("in development");
+  require("dotenv").config();
+}
 
 const express = require("express");
 const app = express();
@@ -59,7 +57,7 @@ app.use(
     saveUninitialized: true,
     cookie: {
       httpOnly: true,
-      secure: true,
+      // secure: true,
       //COMMENT ABOVE TO RUN ON LOCALHOST
       expires: Date.now() + 1000 * 60 * 60 * 24 * 7,
       maxAge: 1000 * 60 * 60 * 24 * 7,
@@ -125,7 +123,7 @@ app.use((err, req, res, next) => {
 
   res.render("./errorTemplate", { err });
 });
-
-app.listen(3000, () => {
-  console.log("Server has Started");
+const port = process.env.PORT || 3000;
+app.listen(port, () => {
+  console.log(`Server has Started on ${port}`);
 });

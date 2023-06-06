@@ -8,9 +8,9 @@ const Hotel = require("../model/hotel");
 
 const { descriptors, places } = require("./seedHelpers");
 
-mongoose
-  .connect("mongodb://127.0.0.1:27017/yelp-camp")
-  .catch((error) => handleError(error));
+mongoose.connect(
+  "mongodb+srv://CSHotels:KAVINHOTELS@cluster0.wcrdeqj.mongodb.net/?retryWrites=true&w=majority"
+);
 
 const db = mongoose.connection;
 
@@ -27,7 +27,7 @@ const seed = async () => {
   for (let i = 0; i < 300; i++) {
     const randDom1000 = Math.floor(Math.random() * 1000);
     const hot = new Hotel({
-      author: "647af1702a717c5733e7341f",
+      author: "647f08086a32273fcff0c1aa",
       location: `${cities[randDom1000].city}, ${cities[randDom1000].state}`,
       title: `${sample(descriptors)} ${sample(places)}`,
       geometry: {

@@ -20,9 +20,18 @@ module.exports.createNewHotel = async (req, res) => {
     })
     .send();
 
-  const getGeoCode = response.body;
-  const coordinates = getGeoCode.features[0].geometry;
+  // console.log(response.body.features);
 
+  const getGeoCode = response.body;
+  if (!(getGeoCode.features && getGeoCode.features.length > 0)) {
+    req.flash(
+      "error",
+      "Couldn't find the City you have Entered. Enter the Correct Name!"
+    );
+    return res.redirect("/hotels/new");
+  }
+
+  const coordinates = getGeoCode.features[0].geometry;
   hot.geometry = coordinates;
 
   hot.image = req.files.map((img) => ({
@@ -33,7 +42,7 @@ module.exports.createNewHotel = async (req, res) => {
   await hot.save();
   req.flash("success", "successfully registered your Hotel");
 
-  res.redirect(`/hotels/${hot._id}`);
+  return res.redirect(`/hotels/${hot._id}`);
 };
 
 module.exports.renderEditHotel = async (req, res) => {
