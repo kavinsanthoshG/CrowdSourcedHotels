@@ -1,7 +1,7 @@
 if (process.env.NODE_ENV !== "production") {
   console.log("in development");
-  require("dotenv").config();
 }
+require("dotenv").config();
 
 const express = require("express");
 const app = express();
@@ -30,11 +30,11 @@ app.use(methodOverride("_method"));
 app.use(mongoSanitize());
 
 const dbUrl = process.env.DBURL;
-console.log(dbUrl);
-console.log(CLOUDINARY_NAME);
-console.log(CLOUDINARY_KEY);
-console.log(CLOUDINARY_SECRET);
-// console.log(MAPBOX_TOKEN);
+// console.log(dbUrl);
+// console.log(CLOUDINARY_NAME);
+// console.log(CLOUDINARY_KEY);
+// console.log(CLOUDINARY_SECRET);
+console.log(process.env.MAPBOX_TOKEN);
 const store = MongoStore.create({
   mongoUrl: dbUrl,
   touchAfter: 24 * 60 * 60,
@@ -61,7 +61,7 @@ app.use(
     saveUninitialized: true,
     cookie: {
       httpOnly: true,
-      // secure: true,
+      secure: true,
       //COMMENT ABOVE TO RUN ON LOCALHOST
       expires: Date.now() + 1000 * 60 * 60 * 24 * 7,
       maxAge: 1000 * 60 * 60 * 24 * 7,
