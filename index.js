@@ -30,7 +30,11 @@ app.use(methodOverride("_method"));
 app.use(mongoSanitize());
 
 const dbUrl = process.env.DBURL;
-
+console.log(dbUrl);
+console.log(CLOUDINARY_NAME);
+console.log(CLOUDINARY_KEY);
+console.log(CLOUDINARY_SECRET);
+// console.log(MAPBOX_TOKEN);
 const store = MongoStore.create({
   mongoUrl: dbUrl,
   touchAfter: 24 * 60 * 60,
