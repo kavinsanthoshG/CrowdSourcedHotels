@@ -1,7 +1,7 @@
 if (process.env.NODE_ENV !== "production") {
   console.log("in development");
-  require("dotenv").config();
 }
+require("dotenv").config();
 
 const express = require("express");
 const app = express();
