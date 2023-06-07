@@ -28,4 +28,8 @@ router
     user.login
   );
 
+router.get("/testing", (req, res) => {
+  res.render("users/checking");
+});
+
 module.exports = router;
