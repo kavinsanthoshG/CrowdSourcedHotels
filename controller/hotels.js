@@ -107,7 +107,7 @@ module.exports.getHotel = async (req, res) => {
 
 module.exports.allHotels = async (req, res) => {
   const hotels = await Hotel.find({});
-
+  hotels.reverse();
   res.render("./hotel/hotels", {
     hotels,
     title: "Hotels",
